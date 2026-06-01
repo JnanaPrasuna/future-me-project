@@ -1,5 +1,7 @@
-// Determine the API base URL. If hosted on a third-party domain like Netlify or opened via file://, point to local server.
-const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port === '5000' ? '' : 'http://localhost:5000';
+// Determine the API base URL.
+// 1. If hosted on localhost/127.0.0.1 (Express local dev) or on Netlify (*.netlify.app), use relative path ('' / local serverless functions).
+// 2. Otherwise (Surge or local file), fallback to http://localhost:5000.
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.endsWith('netlify.app')) ? '' : 'http://localhost:5000';
 
 // Local Core App State Log
 let currentProfile = null;
