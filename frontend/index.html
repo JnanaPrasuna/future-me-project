@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureMe — Meet the version of you who already made it.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Galaxy Password Gate -->
+    <div id="passwordGate" class="password-gate">
+        <div class="galaxy-stars"></div>
+        <div class="galaxy-nebula"></div>
+        <div class="glass-card password-card">
+            <div class="password-icon">🪐</div>
+            <h2>Secure Quantum Decryption</h2>
+            <p>Enter the access code to synchronize with FutureMe</p>
+            <form onsubmit="unlockSite(event)">
+                <div class="password-input-wrapper">
+                    <input type="password" id="gatePassword" placeholder="Enter Site Password..." required>
+                    <div class="input-glow"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-unlock">Decrypt Timeline</button>
+            </form>
+            <div class="password-hint">Hint: Use your Netlify site password (<code>My-Drop-Site</code>)</div>
+            <div id="gateError" class="gate-error">Access denied. Code mismatch.</div>
+        </div>
+    </div>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Future<span>Me</span></a>
+            <nav class="nav-links">
+                <a href="#how-it-works">How it works</a>
+                <a href="#create">Create</a>
+                <a href="#chat">Chat</a>
+                <a href="#ai-hack">AI Hack</a>
+            </nav>
+            <a href="#create" class="btn btn-primary nav-btn">Start Now</a>
+        </div>
+    </header>
+
+    <section class="hero-grid">
+        <div class="hero-left">
+            <div class="pill">Built in Prasanna’s Founder Labs</div>
+            <h1>Meet the version of you who already made it.</h1>
+            <p>FutureMe helps you reflect, plan, and receive clarity from the identity you are building toward.</p>
+            <div class="hero-actions">
+                <a href="#create" class="btn btn-primary">Create My FutureMe</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="glass-card preview-card">
+                <div class="card-header-ai">
+                    <span class="ai-title">Message from Future You</span>
+                    <span class="card-status"><span class="pulse-dot"></span>Live Connection</span>
+                </div>
+                <p>“You are closer than you think. But your current execution parameters must match your ultimate trajectory. Stop optimizing for comfort.”</p>
+                <div style="font-size: 12px; color: var(--text-tertiary);">FutureMe generated • 4 seconds ago</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="reveal">
+        <div class="hook-grid">
+            <div class="glass-card hook-card">
+                <div class="pill pill-glow" style="margin-bottom: 16px;">Step 1</div>
+                <h3>Your goals</h3>
+                <p>Map out the precise destination. Explicitly state the targets, metrics, and realities you are pushing toward.</p>
+            </div>
+            <div class="glass-card hook-card">
+                <div class="pill pill-glow" style="margin-bottom: 16px;">Step 2</div>
+                <h3>Your fears</h3>
+                <p>Isolate your points of friction. Confront the bottlenecks and mental compromises slowing your execution.</p>
+            </div>
+            <div class="glass-card hook-card">
+                <div class="pill pill-glow" style="margin-bottom: 16px;">Step 3</div>
+                <h3>Your next move</h3>
+                <p>Bridge the gap instantly. Receive precise structural logic from the self who has already broken through.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="create" class="reveal">
+        <div class="app-container">
+            <div class="section-header-center">
+                <div class="pill">AI Reflection Engine</div>
+                <h2>Initialize Your Configuration</h2>
+                <p>Provide the ground truths. Your future self will isolate the path.</p>
+            </div>
+
+            <div class="glass-card app-card">
+                <div class="error-message" id="errorBanner">
+                    Please fill out all required fields to sync with your future self.
+                </div>
+
+                <form id="futureForm" onsubmit="generateFutureMe(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="userName">Your Name</label>
+                            <input type="text" id="userName" placeholder="e.g., Prasanna" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userAge">Current Age</label>
+                            <input type="number" id="userAge" placeholder="e.g., 28" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="userGoal">Your Core Dream / Ultimate Target</label>
+                            <input type="text" id="userGoal" placeholder="e.g., Scaling Founder Labs globally" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="userStruggle">What are you struggling with right now?</label>
+                            <textarea id="userStruggle" placeholder="e.g., Spending too much time planning and not enough shipping code." required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="userTimeline">Where do you want to be in exactly 1 year?</label>
+                            <input type="text" id="userTimeline" placeholder="e.g., Running an automated $50k/mo engine with high-signal users." required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="userTone">FutureMe Architecture Tone</label>
+                            <select id="userTone">
+                                <option value="Motivational">Motivational (Aspirational & Driving)</option>
+                                <option value="Brutally Honest" selected>Brutally Honest (No Comfort, Raw Parameters)</option>
+                                <option value="Calm Mentor">Calm Mentor (Stoic, Measured Clarity)</option>
+                                <option value="CEO Mode">CEO Mode (High-Leverage Execution Only)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-engine">Generate My FutureMe</button>
+                </form>
+
+                <div class="engine-loading" id="engineLoading">
+                    <div class="spinner"></div>
+                    <p id="loadingText">Constructing quantum timeline perspective...</p>
+                </div>
+
+                <div class="glass-card engine-result" id="engineResult">
+                    <div class="result-title">Transmission Instantiated // FutureMe Anchor</div>
+                    <div class="result-manifesto" id="outputManifesto"></div>
+                    
+                    <div class="result-block">
+                        <h4>Your Future Identity</h4>
+                        <p id="outputIdentity"></p>
+                    </div>
+
+                    <div class="result-block">
+                        <h4>Your Next 3 Moves</h4>
+                        <ul class="moves-list" id="outputMoves"></ul>
+                    </div>
+
+                    <div class="result-block">
+                        <h4>One Habit to Start Today</h4>
+                        <p id="outputHabit"></p>
+                    </div>
+
+                    <div class="result-block warning-block">
+                        <h4>⚠️ FutureMe Warning</h4>
+                        <p id="outputWarning"></p>
+                    </div>
+
+                    <div class="result-block mantra-block">
+                        <h4>🧘 Daily Mantra</h4>
+                        <p id="outputMantra"></p>
+                    </div>
+
+                    <div class="action-bar" style="display: flex; gap: 16px; margin-top: 32px; justify-content: flex-end;">
+                        <button class="btn btn-secondary" onclick="copyResult()">Copy Result</button>
+                        <button class="btn btn-secondary" onclick="regenerateIdentity()">Regenerate</button>
+                        <a href="#chat" class="btn btn-primary" onclick="scrollToChat(event)">Start Chat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chat" class="reveal">
+        <div class="chat-container">
+            <div class="section-header-center">
+                <div class="pill" id="chatPill">Real-time Interface Preview</div>
+                <h2>Ask your future self anything.</h2>
+            </div>
+            
+            <!-- Chat Locked State -->
+            <div class="glass-card chat-window" id="chatLockedState" style="text-align: center; padding: 64px 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;">
+                <!-- Gold Lock Icon -->
+                <div style="font-size: 56px; line-height: 1; filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.2));">🔒</div>
+                <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em;">Chat is Locked</h3>
+                <p style="color: var(--text-secondary); max-width: 420px; font-size: 15px; line-height: 1.5; margin: 0 auto;">
+                    Create your FutureMe profile using the reflection form above to unlock a live dialogue with your future self.
+                </p>
+                <button class="btn" onclick="scrollToForm(event)" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: #ffffff; border: none; padding: 12px 32px; border-radius: 100px; font-size: 14px; font-weight: 500; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);">
+                    Fill Reflection Form
+                </button>
+            </div>
+
+            <!-- Chat Unlocked State (Initially Hidden) -->
+            <div class="glass-card chat-window" id="chatUnlockedState" style="display: none; flex-direction: column; min-height: 420px; max-height: 600px; overflow: hidden; padding: 0;">
+                <div id="chatMessages" class="chat-messages-container" style="flex-grow: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Messages will be injected dynamically -->
+                </div>
+                <form id="chatForm" onsubmit="sendChatMessage(event)" style="display: flex; padding: 16px 24px; background: rgba(18, 18, 18, 0.8); border-top: 1px solid var(--border-glass); gap: 12px; align-items: center;">
+                    <input type="text" id="chatInput" placeholder="Ask your FutureMe anything..." required autocomplete="off" style="flex-grow: 1; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-glass); border-radius: 10px; padding: 12px 16px; color: var(--text-primary); font-size: 15px;">
+                    <button type="submit" id="chatSendBtn" class="btn btn-primary" style="padding: 12px 24px; border-radius: 10px; font-size: 14px;">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-hack" class="reveal">
+        <div class="hack-panel">
+            <div class="pill pill-glow">Live Workspace Asset</div>
+            <h3 style="font-size: 32px; font-weight: 700; letter-spacing: -0.02em;">Founder Lab AI Hack</h3>
+            <p style="color: var(--text-secondary); margin-top: 8px; font-size: 17px;">Deploy these high-leverage frameworks inside your prompt workflows.</p>
+            
+            <div class="hack-grid">
+                <div class="hack-item">
+                    <h4>Identity Prompting</h4>
+                    <p>Stop asking models how to execute. Frame the entire payload by forcing the system to respond exclusively as the future entity who has already solved this edge-case context.</p>
+                </div>
+                <div class="hack-item">
+                    <h4>Constraint Prompting</h4>
+                    <p>Inject hard baseline limits—time horizons, strict budget caps, operational energy parameters, and missing skillsets—to filter out generic strategies and surface highly optimal hacks.</p>
+                </div>
+                <div class="hack-item">
+                    <h4>Reverse Fear Prompting</h4>
+                    <p>Command the system to map out the exact sequence of operational mistakes, compromises, and cognitive blindspots that would cause your trajectory to fail completely over the next 90 days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dopamine-section reveal">
+        <h2>You did not just build a page.<br>You built a mirror.</h2>
+        <p>FutureMe transforms foundational AI frameworks into a persistent interface for intentional growth and tactical clarity.</p>
+        <button class="btn btn-primary" onclick="triggerShare()">Share My FutureMe</button>
+    </section>
+
+    <div class="toast" id="shareToast">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span id="toastText">Your FutureMe moment is ready to share.</span>
+    </div>
+
+    <footer>
+        Prasanna’s Founder Labs • FutureMe Live Build
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

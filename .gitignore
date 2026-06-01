@@ -1,0 +1,16 @@
+# Node dependencies
+node_modules/
+dist/
+
+# Local configuration and caches
+.netlify/
+.vercel/
+
+# Credentials and environment secrets
+.env
+backend/.env
+*.local
+
+# System files
+.DS_Store
+Thumbs.db
